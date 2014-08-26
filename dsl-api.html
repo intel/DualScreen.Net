@@ -1,0 +1,447 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>DualScreenLibrary API</title>
+	<link rel="stylesheet" type="text/css" href="style.css">	
+</head>
+<body>
+<div class="container">
+
+<summary><p>This document presents the API for DualScreenLibrary</p></summary>
+<ul>
+	<li><a href="#scrman">Screen Manager</a></li>
+	<li><a href="#dsleve">Events</a></li>
+	<li><a href="#dslext">DSLExtensions</a></li>
+	<li><a href="#delactonwin">DelayedActionOnWindow</a></li>
+</ul>
+
+<article id="scrman">
+	<h2>ScreenManager</h2>
+	<code>public static class ScreenManager</code>
+	<summary><p>Defines a set of methods for managing windows on different screens.</p></summary>
+
+	<h3>Enums</h3>
+	<ul>
+		<li><a href="#discontop">DisplayConfigTopology</a></li>
+		<li><a href="#scrali">ScreenAlignment</a></li>
+	</ul>
+	
+	<h3>Properties</h3>
+	<ul>
+		<li><a href="#secscr">SecondaryScreen</a></li>
+		<li><a href="#priscr">PrimaryScreen</a></li>
+		<li><a href="#curtop">CurrentTopology</a></li>
+		<li><a href="#numofdis">NumberOfDisplays</a></li>
+	</ul>
+	<h3>Functions</h3>
+	<ul>
+		<li><a href="#sentopri">SendToPrimary()</a></li>
+		<li><a href="#sentosec">SendToSecondary()</a></li>
+		<li><a href="#swascr">SwapScreen()</a></li>
+		<li><a href="#sentoscr">SendToScreen()</a></li>
+		<li><a href="#extscr">ExtendScreens()</a></li>
+		<li><a href="#closcr">CloneScreens()</a></li>
+		<li><a href="#setint">SetInternal()</a></li>
+		<li><a href="#setext">SetExternal()</a></li>
+		<li><a href="#senpromaiwintoscr">SendProgramsMainWindowToScreen()</a></li>
+		<li><a href="#senprowintoscr">SendProgramsWindowsToScreen()</a></li>
+		<li><a href="#getprowinbynam">getProcessWindowByName()</a></li>
+		<li><a href="#getscrfrowin">getScreenFromWindow()</a></li>
+		<li><a href="#getwinhanfroscr">getWindowHandlesFromScreen()</a></li>
+		<li><a href="#getwinhanfropronam">getWindowHandlesFromProgramName()</a></li>
+		<li><a href="#alitooff">AlignmentToOffset()</a></li>
+		<li><a href="#getdpi">getDPI()</a></li>
+		<li><a href="#getdpirat">getDPIRatio()</a></li>
+	</ul>
+	<h3>Enums</h3>
+
+	<h4 id="discontop">DisplayConfigTopology</h4>
+	<code>enum DisplayConfigTopology</code>
+	<summary><p>represents different display modes</p></summary>
+	
+	<ul>
+		<li>Internal - Disconnect Projector</li>
+		<li>Clone - Duplicate</li>
+		<li>Extend</li>
+		<li>External - Projector only</li>
+	</ul>
+
+	<h4 id="scrali">ScreenAlignment</h4>
+	<code>enum ScreenAlignment</code>
+	<summary><p>represents different screen alignments</p></summary>
+	
+	<ul>
+		<li>None</li>
+		<li>Center</li>
+		<li>Left</li>
+		<li>Right</li>
+		<li>Top</li>
+		<li>Bottom</li>
+	</ul>
+	
+	<h5>Example:</h5>
+	<code>ScreenManager.SendToSecondary(myWindow, ScreenAlignment.Center | ScreenAlignment.Right);</code>
+	
+	<h3>Properties</h3>
+	<h4 id="secscr">SecondaryScreen</h4>
+	<code>static Screen SecondaryScreen { get; }</code>
+	<summary><p>will return the first screen which is not a primary screen or null if there is only one screen.
+		this will work assuming the first screen that is not the primary screen is the second screen.
+		works only on extended mode</p></summary>
+
+	<h4 id="priscr">PrimaryScreen</h4>
+	<code>static Screen PrimaryScreen { get; }</code>
+	<summary><p>will return the primary screen</p></summary>	
+
+
+	<h4 id="curtop">CurrentTopology</h4>
+	<code>static DisplayConfigTopology CurrentTopology { get; set; }</code>
+	<summary><p><a href="#discontop">DisplayConfigTopology</a> of current state</p></summary>
+
+	<h5>Example:</h5>
+	<code>ScreenManager.CurrentTopology = ScreenManager.DisplayConfigTopology.External;</code>
+	
+	<h4 id="numofdis">NumberOfDisplays</h4>
+	<code>static uint NumberOfDisplays</code>
+	<summary><p>The number of displays, even on clone or internal/external</p></summary>
+
+	<h3>Functions</h3>
+	<h4 id="sentopri">SendToPrimary()</h4>
+	<code><pre>static bool SendToPrimary(Window window, ScreenAlignment align)
+static bool SendToPrimary(Window window, int offsetX = 0, int offsetY = 0)
+static bool SendToPrimary(IntPtr hwnd, ScreenAlignment align)
+static bool SendToPrimary(IntPtr hwnd, int offsetX = 0, int offsetY = 0)</pre></code>
+		<summary><p>Sends a window to the primary screen</p></summary>
+		<h5>Parameters:</h5>
+		<dl>
+			<dt>Window window/IntPtr hwnd</dt>
+			<dd>to send to the primary screen</dd>
+			<dt>ScreenAlignment align / int offsetX+offsetY</dt>
+			<dd>Screen alignment / offset</dd>
+		</dl>
+		<h5>Return value</h5>
+		<p>indicates success and failure</p>
+
+		<h5>Example:</h5>
+		<code>ScreenManager.SendToPrimary(myWindow, ScreenAlignment.Center | ScreenAlignment.Right);</code>
+
+	<h4 id="sentosec">SendToSecondary()</h4>
+	<code><pre>static bool SendToSecondary(Window window, ScreenAlignment align)
+static bool SendToSecondary(Window window, int offsetX = 0, int offsetY = 0x)
+static bool SendToSecondary(IntPtr hwnd, ScreenAlignment align)
+static bool SendToSecondary(IntPtr hwnd, int offsetX = 0, int offsetY = 0)</pre></code>
+		<summary><p>Sends a window to the secondary screen</p></summary>
+		<h5>Parameters:</h5>
+		<dl>
+			<dt>Window window/IntPtr hwnd</dt>
+			<dd>to send to the secondary screen</dd>
+			<dt>ScreenAlignment align / int offsetX+offsetY</dt>
+			<dd>Screen alignment / offset</dd>
+		</dl>
+		<h5>Return value</h5>
+		<p>indicates success and failure</p>
+
+		<h5>Example:</h5>
+		<code>ScreenManager.SendToSecondary(myWindow, ScreenAlignment.Center | ScreenAlignment.Right);</code>
+
+	<h4 id="swascr">SwapScreen()</h4>
+	<code><pre>static bool SwapScreen(Window window, ScreenAlignment align)
+static bool SwapScreen(Window window, int offsetX = 0, int offsetY = 0)
+static bool SwapScreen(IntPtr hwnd, int offsetX = 0, int offsetY = 0)
+static bool SwapScreen(IntPtr hwnd, ScreenAlignment align)</pre></code>
+		<summary><p>Sends a window to from primary screen to secondary or from secondary screen to primary screen.</p></summary>
+		<h5>Parameters:</h5>
+		<dl>
+			<dt>Window window/IntPtr hwnd</dt>
+			<dd>window/window handle to send</dd>
+			<dt>ScreenAlignment align / int offsetX+offsetY</dt>
+			<dd>Screen alignment / offset</dd>
+		</dl>
+		<h5>Return value</h5>
+		<p>indicates success and failure. failure will denote when there aren't enough displays or the current screen topology is not extend and the extend mark is set to false</p>
+
+		<h5>Example:</h5>
+		<code>ScreenManager.SwapScreen(myWindow, ScreenAlignment.Bottom);</code>
+	
+	<h4 id="sentoscr">SendToScreen()</h4>
+	<code><pre>static bool SendToScreen(Window window, Screen screen, ScreenAlignment align)
+static bool SendToScreen(Window window, Screen screen, int offsetX = 0, int offsetY = 0)
+static bool SendToScreen(IntPtr hwnd, Screen screen, ScreenAlignment align)
+static bool SendToScreen(IntPtr hwnd, Screen screen, int offsetX = 0, int offsetY = 0)</pre></code>
+		<summary><p>Sends a window to a screen.</p></summary>
+		<h5>Parameters:</h5>
+		<dl>
+			<dt>Window window/IntPtr hwnd</dt>
+			<dd>window/window handle to send</dd>
+			<dt>Screen screen</dt>
+			<dd>to send to</dd>
+			<dt>ScreenAlignment align / int offsetX+offsetY</dt>
+			<dd>Screen alignment / offset</dd>
+		</dl>
+		<h5>Return value</h5>
+		<p>indicates success and failure.</p>
+
+		<h5>Example:</h5>
+		<code>ScreenManager.SendToScreen(myWindow, ScreenManager.SecondaryScreen, ScreenAlignment.Left);</code>	
+
+	<h4 id="extscr">ExtendScreens()</h4>
+	<code>xstatic bool ExtendScreens()</code>
+		<summary><p>Changes CurrentTopology to DisplayConfigTopology.Extend</p></summary>
+
+		<h5>Return value</h5>
+		<p>indicates success and failure.</p>
+
+	<h4 id="closcr">CloneScreens()</h4>
+	<code>static bool CloneScreens()</code>
+		<summary><p>Changes CurrentTopology to DisplayConfigTopology.Clone</p></summary>
+
+		<h5>Return value</h5>
+		<p>indicates success and failure.</p>
+
+	<h4 id="setint">SetInternal()</h4>
+	<code>static bool SetInternal()</code>
+		<summary><p>Changes CurrentTopology to DisplayConfigTopology.Internal</p></summary>
+
+		<h5>Return value</h5>
+		<p>indicates success and failure.</p>
+
+	<h4 id="setext">SetExternal()</h4>
+	<code>static bool SetExternal()</code>
+		<summary><p>Changes CurrentTopology to DisplayConfigTopology.External</p></summary>
+
+		<h5>Return value</h5>
+		<p>indicates success and failure.</p>
+
+
+	<h4 id="senpromaiwintoscr">SendProgramsMainWindowToScreen()</h4>
+	<code>static bool SendProgramsMainWindowToScreen(string progName, Screen screen, ScreenAlignment align)</code>
+	<summary><p>Sends the main window of a program to screen</p></summary>
+
+	<h5>Parameters:</h5>
+	<dl>
+		<dt>string progName</dt>
+		<dd>The name of the program</dd>
+		<dt>Screen screen</dt>
+		<dd>Screen to send the window to</dd>
+		<dt>ScreenAlignment align</dt>
+		<dd>alignment on screen</dd>
+	</dl>
+
+	<h5>Return value</h5>
+	<p>bool to indicate success or failure</p>
+
+	<h4 id="senprowintoscr">SendProgramsWindowsToScreen()</h4>
+	<code>static bool SendProgramsWindowsToScreen(string progName, Screen screen, ScreenAlignment align)</code>
+	<summary><p>Sends all window of a program to a screen</p></summary>
+
+	<h5>Parameters:</h5>
+	<dl>
+		<dt>string progName</dt>
+		<dd>The name of the program</dd>
+		<dt>Screen screen</dt>
+		<dd>Screen to send the window to</dd>
+		<dt>ScreenAlignment align</dt>
+		<dd>alignment on screen</dd>
+	</dl>
+
+	<h5>Return value</h5>
+	<p>bool to indicate success or failure</p>
+
+	<h5>Example:</h5>
+		<code>ScreenManager.SendProgramsWindowsToScreen("chrome", ScreenManager.SecondaryScreen, ScreenAlignment.Center);</code>
+
+	<h4 id="getprowinbynam">getProcessWindowByName()</h4>
+	<code>static IntPtr[] getProcessWindowByName(string proccessName)</code>
+	<summary><p>Returns an array of window handles of all processes with the name [processName]</p></summary>
+
+	<h5>Parameters:</h5>
+	<dl>
+		<dt>string processName</dt>
+		<dd>The name of the process</dd>
+	</dl>
+
+	<h5>Return values</h5>
+	<p>an array of window handles of all processes with the name [processName]</p>
+
+
+	<h4 id="getscrfrowin">getScreenFromWindow()</h4>
+	<code><pre>static Screen getScreenFromWindow(Window window)
+static Screen getScreenFromWindow(IntPtr hwnd)</pre></code>
+	<summary><p>Retrieves a Screen for the display that contains the largest portion of the window</p></summary>
+
+	<h5>Parameters:</h5>
+	<dl>
+		<dt>Window window</dt>
+		<dd>to get screen from</dd>
+	</dl>
+
+	<h5>Return values</h5>
+	<p>The Screen for the display that contains the largest portion of the window</p>
+
+
+	<h4 id="getwinhanfroscr">getWindowHandlesFromScreen()</h4>
+	<code>static IntPtr[] getWindowHandlesFromScreen(Screen screen)</code>
+	<summary><p>returns an array of window handles in a given screen</p></summary>
+
+	<h5>Parameters:</h5>
+	<dl>
+		<dt>Screen screen</dt>
+		<dd>A screen</dd>
+	</dl>
+
+	<h5>Return value</h5>
+	<p>an array of window handles in given screen</p>
+
+	<h4 id="getwinhanfropronam">getWindowHandlesFromProgramName()</h4>
+	<code>static IntPtr[] getWindowHandlesFromProgramName(string progName))</code>
+	<summary><p>returns an array of window handles associated with a program name</p></summary>
+
+	<h5>Parameters:</h5>
+	<dl>
+		<dt>String progName</dt>
+		<dd>program name</dd>
+	</dl>
+
+	<h5>Return value</h5>
+	<p>an array of window handles associated with a program name</p>
+
+	<h4 id="alitooff">AlignmentToOffset()</h4>
+	<code><pre>static Point? AlignmentToOffset(Window window, Screen screen, ScreenAlignment alignment)
+static Point? AlignmentToOffset(IntPtr hwnd, Screen screen, ScreenAlignment alignment)</pre></code>
+	<summary><p>Converts ScreenAlignment to Offset. alignment is depend on the window and the screen</p></summary>
+
+	<h5>Parameters:</h5>
+	<dl>
+		<dt>Window window/IntPtr hwnd</dt>
+		<dd>WPF Window/window handle</dd>
+		<dt>Screen screen</dt>
+		<dd>Screen</dd>
+		<dt>ScreenAlignment align</dt>
+		<dd>alignment on screen</dd>
+	</dl>
+
+	<h5>Return value</h5>
+	<p>Point? - the offset or null in case of a problem</p>
+
+	<h4 id="getdpi">geDPI()</h4>
+	<code>public static Point getDPI()</code>
+	<summary><p>Returns the current dpi ((96.0,96.0) is default)</p></summary>
+
+	<h4 id="getdpirat">geDPIRatio()</h4>
+	<code>public static Point getDPIRatio()</code>
+	<summary><p>Returns the current dpi ratio ((96.0, 96.0) will be (1.0,1.0))</p></summary>
+
+</article>
+<article id="dsleve">
+
+	<h2>DSLEvents</h2>
+	<code>public class DSLEvents : IDisposable</code>
+	<summary><p>DSLEvents contains a single event (<a href="#secscrava">SecondaryScreenAvailableChanged</a>) you can subscribe to, which is raised when the secondary screen becomes available or not available</summary>
+
+	<h3>Constructor and Dispose</h3>
+	<ul>
+		<li><a href="#dsleve()">DSLEvents()</a></li>
+		<li><a href="#dsldis">Dispose()</a></li>
+	</ul>
+	<h3>Events</h3>
+	<ul>
+		<li><a href="#secscrava">SecondaryScreenAvailableChanged</a></li>
+	</ul>
+	<h3>Event Args</h3>
+	<ul>
+		<li><a href="#savaeveargs">SAvailableEventArgs</a></li>
+	</ul>
+
+	<h4 id="dsleve()">DSLEvents()</h4>
+	<code>public DSLEvents()</code>
+	<summary><p>Subscribed to system's DisplaySettingsChanged. DisplaySettingsChanged is a <u>static event</u> so it must be <u>detached</u> at the end of use.</p></summary>
+
+	<h4 id="dsldis">Dispose()</h4>
+	<code>public void Dispose()</code>
+	<summary><p>Detaches from system's DisplaySettingsChanged</p></summary>
+	
+	<h4 id="secscrava">SecondaryScreenAvailableChanged</h4>
+	<code>public event EventHandler<SAvailableEventArgs> SecondaryScreenAvailableChanged</code>
+	<summary><p>Notifies when the secondary screen's availability is changed.<br/>
+	In order to use this event to move the window to a different screen you should use <a href="#delactonwin">DelayedActionOnWindow</a>.<br/>
+	Subscribes to DisplaySettingsChanged which is a static event and therefore must be detached.</p></summary>
+
+	<h5>Example:</h5>
+	<code><pre>
+events.SecondaryScreenAvailableChanged += ((sender, e) =>
+{
+	if (e.isAvailable)
+		new DelayedActionOnWindow(this,
+			() => this.SendToSecondary(ScreenManager.ScreenAlignment.Center | ScreenManager.ScreenAlignment.Left)).Invoke();
+});
+</pre></code>
+
+	<h4 id="savaeveargs">SAvailableEventArgs</h4>
+	<code>public class SAvailableEventArgs</code>
+	<summary><p>Event arguments for SecondaryScreenAvailableChanged event</p></summary>
+	<h5>contains:</h5>
+	<code>public bool isAvailable { get; private set; }</code>
+	
+</article>
+<article id="dslext">
+	<h3>DSLExtensions</h3>
+	<code>public static class DSLExtensions</code>
+	<summary><p>Extensions for WPF windows</p></summary>
+	
+	<h4>Functions</h4>
+	<ul>
+		<li>SendToPrimary()</li>
+		<li>SendToSecondary()</li>
+		<li>SendToScreen()</li>
+		<li>SwapScreen()</li>
+		<li>getScreen()</li>
+	</ul>
+</article>
+
+<article id="delactonwin">
+	<h2>DelayedActionOnWindow</h2>
+	<code>public class DelayedActionOnWindow</code>
+	<summary>
+	<p>will invoke [action] in [window]'s thread when the application will be idle.
+			useful when wanting to move a window from one screen to another screen when subscribing to
+			<a href="#secscrava">DSLEvents.SecondaryScreenAvailableChanged event.</a>
+	</p>
+	</summary>
+
+	<h3><a href="#secscrava">Example</a></h3>
+
+	<h3>Constructor</h3>
+	<ul>
+		<li><a href="#delactonwin()">DelayedActionOnWindow()</a></li>
+	</ul>
+	<h3>Methods</h3>
+	<ul>
+		<li><a href="#inv()">Invoke()</a></li>
+	</ul>
+
+	<h4 id="delactonwin()">DelayedActionOnWindow()</h4>
+	<code>public DelayedActionOnWindow(Window window, int delay, Action action)</code>
+	<summary><p>creates an instance that can be invoked using Invoke() method
+	which will invoke [action] in [window]'s thread when the application will be idle.
+		useful when wanting to move a window from one screen to another screen when subscribing to
+		<a href="#secscrava">DSLEvents.SecondaryScreenAvailableChanged event.</a></p></summary>
+
+	<h5>Parameters:</h5>
+	<dl>
+		<dt>window :: Window</dt>
+		<dd>to get screen from</dd>
+		<dt>action :: Action</dt>
+		<dd>action to invoke</dd>
+	</dl>
+	
+	<h4 id="inv()">Invoke()</h4>
+	<code>void Invoke()</code>
+	<summary><p>Invokes the delayed action</p></summary>
+</article>
+
+</div>
+</body>
+</html>
+
+

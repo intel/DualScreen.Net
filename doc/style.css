@@ -1,0 +1,39 @@
+body { 
+	font-family: Arial;
+	font-size: 16px;
+	background: background: rgb(25,254,254);
+}
+h1 {
+	font-size: 26px;
+}
+a {
+	color: #57B;
+	text-decoration: none;
+}
+a:visited {
+	color: #57B;
+	text-decoration: none;
+}
+a:hover {
+	color: #136;
+	text-decoration: underline;
+}
+dt { margin-top: 15px; }
+dd {
+	margin-top: 5px;
+	color: #444;
+}
+.container {
+  width: 980px;
+ /* margin: auto; 
+  background: rgb(255,255,255);
+  box-shadow:  0.5px 0.5px 5px #666;*/
+  padding: 10px 20px;
+}
+code {
+	color: #577;
+	font-family: courier, monospace;
+	font-size: 10;
+	font-weight: regular;
+	border: 1px;
+}
