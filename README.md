@@ -12,11 +12,11 @@ All assets in this repository, unless otherwise stated through sub-directory LIC
 The MIT License (MIT). Copyright (c) 2014, Intel Corporation. All rights reserved.
 
 
-Whay do I need this Library?
+Why do I need this Library?
 =============================
 
 We know you're an awesome developer with heavy crafted skiils!
-So you would not want to waste your time on parts you don;t have too!
+So you would not want to waste your time on parts you don't have too!
 
 DualScreen.Net lets you focus on developing YOUR app, with your idea and your vision.
 It's here to make detection, manipulation, control and multiple screens in windows - seamless.
@@ -30,7 +30,7 @@ Try it out, Now!
 Get started
 ===========
 
-[A simple example and review we be here... ]
+(A simple example and review will be here...)
 
 
 
