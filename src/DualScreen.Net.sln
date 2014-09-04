@@ -1,0 +1,92 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Intel.FlexServices.DisplayHelperLib", "Intel.FlexServices.DisplayHelperLib\DisplayHelperLib.vcxproj", "{32E02B41-3F72-4860-9066-14F7E9345D3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DualScreen.Net", "DualScreen.Net\DualScreen.Net.csproj", "{F952DF70-EB71-47E8-B4BD-8336E7CC27CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DS.Net-Example", "DualScreen.Net-Example\DS.Net-Example.csproj", "{2BB3EE8B-20F3-46F6-81D5-E88D5AB330BC}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://hastfs2010:8080/tfs/it
+		SccProjectUniqueName0 = Intel.FlexServices.DisplayHelperLib\\DisplayHelperLib.vcxproj
+		SccProjectName0 = Intel.FlexServices.DisplayHelperLib
+		SccAuxPath0 = http://hastfs2010:8080/tfs/it
+		SccLocalPath0 = Intel.FlexServices.DisplayHelperLib
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName1 = DualScreen.Net\\DualScreen.Net.csproj
+		SccProjectName1 = DualScreen.Net
+		SccAuxPath1 = http://hastfs2010:8080/tfs/it
+		SccLocalPath1 = DualScreen.Net
+		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName2 = DualScreen.Net-Example\\DS.NET-Example.csproj
+		SccProjectName2 = DualScreen.Net-Example
+		SccAuxPath2 = http://hastfs2010:8080/tfs/it
+		SccLocalPath2 = DualScreen.Net-Example
+		SccProvider2 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|Win32 = Debug|Win32
+		PR|Any CPU = PR|Any CPU
+		PR|Mixed Platforms = PR|Mixed Platforms
+		PR|Win32 = PR|Win32
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32E02B41-3F72-4860-9066-14F7E9345D3D}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{32E02B41-3F72-4860-9066-14F7E9345D3D}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{32E02B41-3F72-4860-9066-14F7E9345D3D}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{32E02B41-3F72-4860-9066-14F7E9345D3D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{32E02B41-3F72-4860-9066-14F7E9345D3D}.Debug|Win32.Build.0 = Debug|Win32
+		{32E02B41-3F72-4860-9066-14F7E9345D3D}.PR|Any CPU.ActiveCfg = PR|Win32
+		{32E02B41-3F72-4860-9066-14F7E9345D3D}.PR|Mixed Platforms.ActiveCfg = PR|Win32
+		{32E02B41-3F72-4860-9066-14F7E9345D3D}.PR|Mixed Platforms.Build.0 = PR|Win32
+		{32E02B41-3F72-4860-9066-14F7E9345D3D}.PR|Win32.ActiveCfg = PR|Win32
+		{32E02B41-3F72-4860-9066-14F7E9345D3D}.PR|Win32.Build.0 = PR|Win32
+		{32E02B41-3F72-4860-9066-14F7E9345D3D}.Release|Any CPU.ActiveCfg = Release|Win32
+		{32E02B41-3F72-4860-9066-14F7E9345D3D}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{32E02B41-3F72-4860-9066-14F7E9345D3D}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{32E02B41-3F72-4860-9066-14F7E9345D3D}.Release|Win32.ActiveCfg = Release|Win32
+		{32E02B41-3F72-4860-9066-14F7E9345D3D}.Release|Win32.Build.0 = Release|Win32
+		{F952DF70-EB71-47E8-B4BD-8336E7CC27CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F952DF70-EB71-47E8-B4BD-8336E7CC27CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F952DF70-EB71-47E8-B4BD-8336E7CC27CE}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F952DF70-EB71-47E8-B4BD-8336E7CC27CE}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F952DF70-EB71-47E8-B4BD-8336E7CC27CE}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{F952DF70-EB71-47E8-B4BD-8336E7CC27CE}.PR|Any CPU.ActiveCfg = Release|Any CPU
+		{F952DF70-EB71-47E8-B4BD-8336E7CC27CE}.PR|Any CPU.Build.0 = Release|Any CPU
+		{F952DF70-EB71-47E8-B4BD-8336E7CC27CE}.PR|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F952DF70-EB71-47E8-B4BD-8336E7CC27CE}.PR|Mixed Platforms.Build.0 = Release|Any CPU
+		{F952DF70-EB71-47E8-B4BD-8336E7CC27CE}.PR|Win32.ActiveCfg = Release|Any CPU
+		{F952DF70-EB71-47E8-B4BD-8336E7CC27CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F952DF70-EB71-47E8-B4BD-8336E7CC27CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F952DF70-EB71-47E8-B4BD-8336E7CC27CE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F952DF70-EB71-47E8-B4BD-8336E7CC27CE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F952DF70-EB71-47E8-B4BD-8336E7CC27CE}.Release|Win32.ActiveCfg = Release|Any CPU
+		{2BB3EE8B-20F3-46F6-81D5-E88D5AB330BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BB3EE8B-20F3-46F6-81D5-E88D5AB330BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BB3EE8B-20F3-46F6-81D5-E88D5AB330BC}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{2BB3EE8B-20F3-46F6-81D5-E88D5AB330BC}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{2BB3EE8B-20F3-46F6-81D5-E88D5AB330BC}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{2BB3EE8B-20F3-46F6-81D5-E88D5AB330BC}.PR|Any CPU.ActiveCfg = Release|Any CPU
+		{2BB3EE8B-20F3-46F6-81D5-E88D5AB330BC}.PR|Any CPU.Build.0 = Release|Any CPU
+		{2BB3EE8B-20F3-46F6-81D5-E88D5AB330BC}.PR|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{2BB3EE8B-20F3-46F6-81D5-E88D5AB330BC}.PR|Mixed Platforms.Build.0 = Release|Any CPU
+		{2BB3EE8B-20F3-46F6-81D5-E88D5AB330BC}.PR|Win32.ActiveCfg = Release|Any CPU
+		{2BB3EE8B-20F3-46F6-81D5-E88D5AB330BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BB3EE8B-20F3-46F6-81D5-E88D5AB330BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BB3EE8B-20F3-46F6-81D5-E88D5AB330BC}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{2BB3EE8B-20F3-46F6-81D5-E88D5AB330BC}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{2BB3EE8B-20F3-46F6-81D5-E88D5AB330BC}.Release|Win32.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

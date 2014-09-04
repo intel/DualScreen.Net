@@ -1,0 +1,128 @@
+﻿<Window x:Class="WpfWindowTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Dual Screen Library - Demo" MinWidth="650" MinHeight="680" Width="650" Height="680">
+    
+    <Window.Resources>
+
+        <Style TargetType="{x:Type Grid}" x:Key="windowStyle">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#06b" Offset="0.0" />
+                        <GradientStop Color="#06c" Offset="0.3" />
+
+                        <GradientStop Color="#06b" Offset="0.6" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <!--<Setter Property="FontFamily" Value="Intel Neo Sans"/>-->
+        </Style>
+        <Style TargetType="{x:Type Control}" x:Key="bigText">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="Margin" Value="20,0,0,0"/>
+            <Setter Property="Foreground" Value="#eee"/>
+            <Setter Property="FontFamily" Value="Clear Sans"/>
+        </Style>
+        <Style TargetType="{x:Type Button}" x:Key="btnStyle">
+            <Setter Property="Foreground" Value="#046"/>
+            <Setter Property="Background" Value="#eee"/>
+            <Setter Property="BorderBrush" Value="LightBlue"/>
+            <Setter Property="FontFamily" Value="Clear Sans"/>
+            <Setter Property="FontSize" Value="12" />
+        </Style>
+        <Style TargetType="{x:Type Control}" x:Key="generalStyle">
+            <Setter Property="FontFamily" Value="Clear Sans"/>
+            <Setter Property="Foreground" Value="#eee"/>
+            
+            <!--<Setter Property="FontFamily" Value="Intel Neo Sans"/>-->
+        </Style>
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource btnStyle}"></Style>
+        <Style TargetType="{x:Type Label}" BasedOn="{StaticResource generalStyle}"></Style>
+        <Style TargetType="{x:Type RadioButton}" BasedOn="{StaticResource generalStyle}"></Style>
+        <Style TargetType="{x:Type CheckBox}" BasedOn="{StaticResource generalStyle}"></Style>
+
+    </Window.Resources>
+    <Grid Style="{StaticResource windowStyle}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Style="{StaticResource bigText}">Screen Control:</Label>
+            <WrapPanel Grid.Row="1" Margin="20" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Margin="5" Click="clone_Click" Padding="10"  Height="40">Clone Screens</Button>
+                <Button Margin="5" Click="extend_Click"  Padding="10" Height="40">Extend Screens</Button>
+                <Button Margin="5" Click="internal_Click" Padding="10"  Height="40">Set Internal</Button>
+                <Button Margin="5" Click="external_Click"  Padding="10" Height="40">Set External</Button>
+                <Button Margin="5" Click="numOfDisplay_Click" Padding="10" Height="40">Check Num of Displays</Button>
+            </WrapPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Style="{StaticResource bigText}">Control This Window:</Label>
+            <WrapPanel Margin="20" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Margin="5" Click="swapScreen_Click" Padding="10" Height="40">Swap Screen</Button>
+                <Button Margin="5" Click="sendToPrimary_Click" Padding="10" Height="40">Send To Primary</Button>
+                <Button Margin="5" Click="sendToSecondary_Click" Padding="10" Height="40">Send To Secondary</Button>
+                <Button Margin="5" Click="align_Click" Padding="10" Height="40">Align Screen</Button>
+            </WrapPanel>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Style="{StaticResource bigText}">Control a Different Program:</Label>
+            <WrapPanel Margin="20" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                <StackPanel Margin="5,0,5,0" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label>Program name to send:</Label>
+                    <TextBox x:Name="progNameTextBox" MinWidth="100" GotFocus="removePlaceHolderForProgName" LostFocus="addPlaceHolderForProgName">(ex: chrome)</TextBox>
+                    <RadioButton Margin="10,5,10,0" x:Name="sendProgToPrimary" IsChecked="True">Primary</RadioButton>
+                    <RadioButton Margin="0,5,10,0" x:Name="sendProgToSecondary">Secondary</RadioButton>
+                    <CheckBox Margin="5" x:Name="forceExtend">Force Extend</CheckBox>
+                </StackPanel>
+                <Button Margin="5" Click="sendProgWinToScreen_Click" Padding="10"  Height="40">Send Program Windows to Screen</Button>
+                <Button Margin="5" Click="sendProgMainWinToScreen_Click" Padding="10"  Height="40">Send Programs Main Window to Screen</Button>
+                <Button Margin="5" Click="SendFromSecondary_Click" Padding="10" Height="40">Send All Windows From Secondary to Primary Screen</Button>
+            </WrapPanel>
+        </Grid>
+        <Grid Grid.Row="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+            <Label Grid.Row="0" Style="{StaticResource bigText}">Control The Alignment of Windows:</Label>
+                <StackPanel Margin="20,0,20,0" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label>Alignment:</Label>
+                <CheckBox Margin="5" x:Name="center" Content="Center"/>
+                <CheckBox Margin="5" x:Name="left" Content="Left"/>
+                <CheckBox Margin="5" x:Name="right" Content="Right"/>
+                <CheckBox Margin="5" x:Name="top" Content="Top"/>
+                <CheckBox Margin="5" x:Name="bottom" Content="Bottom"/>
+
+            </StackPanel>        
+        </Grid>
+
+        <Image HorizontalAlignment="Center" Height="100" Margin="5,5,5,5" Grid.Row="4" VerticalAlignment="Top" Source="Intel-white-logo.png" RenderOptions.BitmapScalingMode="HighQuality"/>
+
+        <StackPanel Margin="20,0,20,0" Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Label>Status:</Label>
+            <Label x:Name="status" Margin="0,0,50,0">Ready</Label>
+            <Label>Number of Displays:</Label>
+            <Label x:Name="numOfDisplaysLabel"></Label>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -9,7 +9,7 @@ namespace DualScreenLibrary
 {
 	public class MultiScreenLibrary
 	{
-		internal const string DLL_PATH = "C:/Projects/Flex projects/MSL/Project/Intel WiDi Window Manager/bin/Debug/Intel.FlexServices.DisplayHelperLib.dll";
+		internal const string DLL_PATH = "Intel.FlexServices.DisplayHelperLib.dll";
 
 		#region Constants
 		// The WM_GETMINMAXINFO message is sent to a window when the size or
