@@ -9,17 +9,17 @@ License
 -------
 
 All assets in this repository, unless otherwise stated through sub-directory LICENSE or NOTICE files, are subject to the
-The MIT License (MIT). Copyright (c) 2014, Intel Corporation. All rights reserved.
+The MIT License (MIT). Copyright (C) 2014, Intel Corporation. All rights reserved.
 
 
 Why do I need this Library?
 =============================
 
-We know you're an awesome developer with heavy crafted skiils!
-So you would not want to waste your time on parts you don't have too!
+We know you're an awesome developer with heavy crafted skills!
+So you would not want to waste your time on things you don't have too!
 
 DualScreen.Net lets you focus on developing YOUR app, with your idea and your vision.
-It's here to make detection, manipulation, control and multiple screens in windows - seamless.
+It's here to make detection, manipulation and control of multiple screens in windows - seamless.
 
 Forget about Win32 API calls and Window's Handles. DualScreen.Net makes them work for you.
 
@@ -30,9 +30,10 @@ Try it out, Now!
 Get started
 ===========
 
-(A simple example and review will be here...)
+(A simple example and review will be here soon...)
 
 
 
-DualScreen.Net Contributors.
+Software by Intel Corporation 2014. 
+Look Inside our code. It's for you.
 
