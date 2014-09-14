@@ -135,6 +135,7 @@
     <ProjectReference Include="..\DualScreen.Net\DualScreen.Net.csproj">
       <Project>{f952df70-eb71-47e8-b4bd-8336e7cc27ce}</Project>
       <Name>DualScreen.Net</Name>
+      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -145,7 +146,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy "$(SolutionDir)Intel WiDi Window Manager\bin\$(Configuration)\Intel.FlexServices.DisplayHelperLib.dll" "$(TargetDir)"</PostBuildEvent>
+    <PostBuildEvent>copy "$(SolutionDir)Lib\Intel.FlexServices.DisplayHelperLib.dll" "$(TargetDir)"
+copy "$(SolutionDir)Lib\DualScreenLibrary.dll" "$(TargetDir)"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -115,9 +115,10 @@
 
             </StackPanel>        
         </Grid>
-
-        <Image HorizontalAlignment="Center" Height="100" Margin="5,5,5,5" Grid.Row="4" VerticalAlignment="Top" Source="Intel-white-logo.png" RenderOptions.BitmapScalingMode="HighQuality"/>
-
+        <StackPanel  Grid.Row="4">
+            <Image HorizontalAlignment="Center" Height="100" Margin="5,5,5,0" Grid.Row="4" VerticalAlignment="Top" Source="Intel-white-logo.png" RenderOptions.BitmapScalingMode="HighQuality"/>
+            <Label HorizontalAlignment="Center"  Margin="0,-20,0,0" FontWeight="Bold" FontSize="16">Dual Screen .Net</Label>
+        </StackPanel>
         <StackPanel Margin="20,0,20,0" Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Center">
             <Label>Status:</Label>
             <Label x:Name="status" Margin="0,0,50,0">Ready</Label>
