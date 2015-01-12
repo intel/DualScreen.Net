@@ -34,6 +34,6 @@ Get started
 
 
 
-Software by Intel Corporation 2014. 
+Software by Intel Corporation 2015. 
 Look Inside our code. It's for you.
 
