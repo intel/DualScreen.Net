@@ -1,5 +1,11 @@
-// DisplayHelperLib.cpp : Defines the exported functions for the DLL application.
-//
+/* DisplayHelperLib.cpp : Defines the exported functions for the DLL application.
+ *
+ * Copyright (C) 2015 Intel Corporation.
+ *
+ * This software may be modified and distributed under the terms
+ * of the MIT license.  See the LICENSE file for details.
+ */
+
 
 #include "stdafx.h"
 #include "windef.h"

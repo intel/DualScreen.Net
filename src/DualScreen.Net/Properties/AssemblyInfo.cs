@@ -1,16 +1,24 @@
-﻿using System.Reflection;
+﻿/* AssemblyInfo.cs : Defines the dll properties. 
+ *
+ * Copyright (C) 2015 Intel Corporation.
+ *
+ * This software may be modified and distributed under the terms
+ * of the MIT license.  See the LICENSE file for details.
+ */
+
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MultiScreenLibrary")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("DualScreen.Net Library")]
+[assembly: AssemblyDescription("DualScreen.Net is a .Net Library for creating Dual-Screen application on Windows")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("MultiScreenLibrary")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2014")]
+[assembly: AssemblyCompany("Intel Corporation")]
+[assembly: AssemblyProduct("DualScreen.Net")]
+[assembly: AssemblyCopyright("Copyright © Intel Corporation 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

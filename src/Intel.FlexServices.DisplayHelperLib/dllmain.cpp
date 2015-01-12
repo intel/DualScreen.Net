@@ -1,4 +1,11 @@
-// dllmain.cpp : Defines the entry point for the DLL application.
+/* dllmain.cpp : Defines the entry point for the DLL application.
+ *
+ * Copyright (C) 2015 Intel Corporation.
+ *
+ * This software may be modified and distributed under the terms
+ * of the MIT license.  See the LICENSE file for details.
+ */
+
 #include "stdafx.h"
 
 BOOL APIENTRY DllMain( HMODULE hModule,
