@@ -9,7 +9,7 @@
 <Window x:Class="WpfWindowTest.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Dual Screen Library - Demo" MinWidth="650" MinHeight="680" Width="650" Height="680">
+        Title="Dual Screen Library - Demo" MinWidth="650" MinHeight="700" Width="650" Height="700">
     
     <Window.Resources>
 
