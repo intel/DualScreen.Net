@@ -1,6 +1,12 @@
-// stdafx.cpp : source file that includes just the standard includes
-// WiDiWidgetLib.pch will be the pre-compiled header
-// stdafx.obj will contain the pre-compiled type information
+/*  stdafx.cpp : source file that includes just the standard includes
+*   stdafx.obj will contain the pre-compiled type information
+*
+* Copyright (C) 2015 Intel Corporation.
+*
+* This software may be modified and distributed under the terms
+* of the MIT license.  See the LICENSE file for details.
+*/
+
 
 #include "stdafx.h"
 

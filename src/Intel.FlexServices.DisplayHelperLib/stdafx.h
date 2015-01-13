@@ -1,7 +1,11 @@
-// stdafx.h : include file for standard system include files,
-// or project specific include files that are used frequently, but
-// are changed infrequently
-//
+/* stdafx.h : include file for standard system include files, or project specific 
+*   include files that are used frequently, but are changed infrequently
+*
+* Copyright (C) 2015 Intel Corporation.
+*
+* This software may be modified and distributed under the terms
+* of the MIT license.  See the LICENSE file for details.
+*/
 
 #pragma once
 
@@ -12,5 +16,3 @@
 #include <windows.h>
 
 
-
-// TODO: reference additional headers your program requires here

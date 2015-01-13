@@ -1,4 +1,12 @@
-﻿<Application x:Class="WpfWindowTest.App"
+﻿ <!-- App.xaml.cs : Generic App.xaml file
+ *
+ * Copyright (C) 2015 Intel Corporation.
+ *
+ * This software may be modified and distributed under the terms
+ * of the MIT license.  See the LICENSE file for details.
+ *-->
+
+    <Application x:Class="WpfWindowTest.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              StartupUri="MainWindow.xaml">

@@ -1,4 +1,12 @@
-﻿<Window x:Class="WpfWindowTest.MainWindow"
+﻿ <!-- MainWindow.xaml.cs : The Main window of the Demo App
+ *
+ * Copyright (C) 2015 Intel Corporation.
+ *
+ * This software may be modified and distributed under the terms
+ * of the MIT license.  See the LICENSE file for details.       
+-->
+ 
+<Window x:Class="WpfWindowTest.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Dual Screen Library - Demo" MinWidth="650" MinHeight="680" Width="650" Height="680">

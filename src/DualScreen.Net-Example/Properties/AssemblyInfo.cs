@@ -7,12 +7,12 @@ using System.Windows;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("WpfWindowTest")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("DualScreen.Net Library - Demo App")]
+[assembly: AssemblyDescription("DualScreen.Net Library - Demo App is an application demonstraiting the DualScreen.Net Library API, and with source code supplied helps developers to better utilize the library to thier solutions.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("WpfWindowTest")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2014")]
+[assembly: AssemblyCompany("Intel Corporation")]
+[assembly: AssemblyProduct("DualScreen.Net")]
+[assembly: AssemblyCopyright("Copyright © Intel Corporation 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

@@ -1,3 +1,11 @@
+/* resource.h : Generic resource.h file
+*
+* Copyright (C) 2015 Intel Corporation.
+*
+* This software may be modified and distributed under the terms
+* of the MIT license.  See the LICENSE file for details.
+*/
+
 //{{NO_DEPENDENCIES}}
 // Microsoft Visual C++ generated include file.
 // Used by WiDiWidgetLib.rc
