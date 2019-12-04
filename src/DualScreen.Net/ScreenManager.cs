@@ -378,7 +378,7 @@ namespace DualScreenLibrary
 			{
 				uint uintState = (uint)value;
 				if (!SetCurrentTopology(ref uintState))
-					throw new Exception("Error: unable to set current topology");
+					throw new Exception("Error: unable to set the current topology");
 			}
 		}
 		/// <summary>
