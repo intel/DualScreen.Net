@@ -370,7 +370,7 @@ namespace DualScreenLibrary
 				DisplayConfigTopology topology = (DisplayConfigTopology)curState;
 
 				if (topology == 0)
-					throw new Exception("Error: unable to get current topology");
+					throw new Exception("Error: unable to get the current topology");
 				return topology;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized)]
